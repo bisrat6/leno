@@ -1,0 +1,107 @@
+*,
+*::after,
+*::before{
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+body{
+    font-family: 'Open-Sans', sans-serif;
+    scroll-behavior:smooth;
+    height: 200vh;
+}
+
+
+a{
+    text-decoration: none;
+    color:inherit;
+}
+ul{
+    list-style:none;
+}
+
+
+.navbar{
+    position: fixed;
+    background-color:transparent;
+    padding:0.5rem 5rem;
+    color:white;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    width:100%;
+    transition: all 0.5s ease;
+}
+.navbar img{
+    width:100px;
+    height:60px;
+}
+.navbar .main-menu-list{
+    display: flex;
+    gap:2rem;
+    font-size:1.1rem;
+    font-weight: 500;
+    color:white;
+}
+.navbar li:hover{
+    color:rgb(96, 84, 255);
+}
+
+.hamburger-menu{
+    display:none;
+    font-size:2rem;
+    cursor: pointer;
+}
+.navbar .mobile-menu-list{
+    position:absolute;
+    background-color: rgba(0,0,0,0.8);
+    width:100%;
+    top:100%;
+    left:0;
+    height:500px;
+    display: flex;
+    flex-direction:column;
+    gap:2rem;
+    justify-content: center;
+    align-items: center;
+    font-size:1.1rem;
+    font-weight: 500;
+    color:white;
+    transform: translateX(100%);
+    overflow-x: hidden;
+    transition: transform 0.3s ease;
+}
+.navbar .mobile-menu-list.active{
+    transform:translateX(0);
+}
+.toggel{
+    display:none;
+}
+.navbar.scroll{
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+}
+
+
+/* header section */
+
+.header{
+    background: black url('../images/download-background.jpg') center center/cover no-repeat;
+    height:100vh;
+}
+
+@media (max-width:768px){
+.navbar .main-menu{
+    display:none;
+}
+
+.toggel{
+    display:block;
+}
+.navbar .hamburger-menu{
+    display:block;
+    font-size:2rem;
+}
+}
